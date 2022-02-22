@@ -52,7 +52,7 @@ class LeapYearTest extends TestCase
     /**
      * @test
     */
-    public function should_year_not_be_divisible_by_four_hundred(): void
+    public function should_year_not_be_divisible_by_a_hundred(): void
     {
         self::assertFalse(Year::isLeapYear(1800));
     }
