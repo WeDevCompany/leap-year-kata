@@ -18,6 +18,14 @@ class LeapYearTest extends TestCase
         yield "eight" => [8];
         yield "twelve" => [12];
         yield "one thousand nine hundred ninety six" => [1996];
+
+    }
+
+    /**
+     * @return iterator<int>
+     */
+    public function privideLeapYearMultipleFourHundred(): iterator
+    {
         yield "four hundred" => [400];
         yield "eight hundred" => [800];
         yield "one thousand two hundred" => [1200];
@@ -56,5 +64,14 @@ class LeapYearTest extends TestCase
     public function should_year_not_be_leap_year(int $year): void
     {
         self::assertFalse(Year::isLeapYear($year));
+    }
+
+    /**
+     * @test
+     * @dataProvider privideLeapYearMultipleFourHundred
+    */
+    public function should_year_be_leap_year_and_divisible_by_four_hundred(int $year): void
+    {
+        self::assertTrue(Year::isLeapYear($year));
     }
 }
