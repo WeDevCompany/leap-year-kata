@@ -24,4 +24,10 @@ class LeapYearTest extends TestCase
     {
         self::assertTrue(Year::isLeapYear(8));
     }
+
+    /** @test */
+    public function should_year_twelve_be_leap_year(): void
+    {
+        self::assertTrue(Year::isLeapYear(12));
+    }
 }
