@@ -11,18 +11,6 @@ class Year
 
     public static function isLeapYear(int $int): bool
     {
-        if ($int === 12) {
-            return true;
-        }
-
-        if ($int === 8) {
-            return true;
-        }
-
-        if ($int === 4) {
-            return true;
-        }
-
-        return false;
+        return $int % 4 === 0;
     }
 }
