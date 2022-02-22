@@ -4,13 +4,8 @@ namespace Kata;
 
 class Year
 {
-    public function theMethod(): bool
-    {
-        return true;
-    }
-
     public static function isLeapYear(int $int): bool
     {
-        return $int % 4 === 0 && ($int % 100 !== 0);
+        return $int % 4 === 0 && ($int % 100 !== 0 || $int % 400 === 0);
     }
 }

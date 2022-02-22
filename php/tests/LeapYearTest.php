@@ -18,6 +18,11 @@ class LeapYearTest extends TestCase
         yield "eight" => [8];
         yield "twelve" => [12];
         yield "one thousand nine hundred ninety six" => [1996];
+        yield "four hundred" => [400];
+        yield "eight hundred" => [800];
+        yield "one thousand two hundred" => [1200];
+        yield "one thousand six hundred" => [1600];
+
     }
 
     /**
@@ -29,6 +34,10 @@ class LeapYearTest extends TestCase
         yield "two" => [2];
         yield "three" => [3];
         yield "one thousand nine hundred ninety seven" => [1997];
+        yield "a hundred" => [100];
+        yield "two hundred" => [200];
+        yield "three hundred" => [300];
+        yield "five hundred" => [500];
     }
 
     /**
@@ -47,21 +56,5 @@ class LeapYearTest extends TestCase
     public function should_year_not_be_leap_year(int $year): void
     {
         self::assertFalse(Year::isLeapYear($year));
-    }
-
-    /**
-     * @test
-    */
-    public function should_year_not_be_divisible_by_a_hundred(): void
-    {
-        self::assertFalse(Year::isLeapYear(1800));
-    }
-
-    /**
-     * @test
-     */
-    public function should_a_hundred_not_be_divisible_by_four_hundred(): void
-    {
-        self::assertFalse(Year::isLeapYear(100));
     }
 }
