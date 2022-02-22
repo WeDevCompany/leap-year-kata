@@ -14,7 +14,8 @@ class Year
         if ($int === 8) {
             return true;
         }
-        if ($int == 4) {
+
+        if ($int === 4) {
             return true;
         }
 
