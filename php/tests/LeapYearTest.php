@@ -17,6 +17,7 @@ class LeapYearTest extends TestCase
         yield "four" => [4];
         yield "eight" => [8];
         yield "twelve" => [12];
+        yield "one thousand nine hundred ninety six" => [1996];
     }
 
     /**
@@ -27,6 +28,7 @@ class LeapYearTest extends TestCase
         yield "one" => [1];
         yield "two" => [2];
         yield "three" => [3];
+        yield "one thousand nine hundred ninety seven" => [1997];
     }
 
     /**
@@ -46,4 +48,6 @@ class LeapYearTest extends TestCase
     {
         self::assertFalse(Year::isLeapYear($year));
     }
+
+
 }
