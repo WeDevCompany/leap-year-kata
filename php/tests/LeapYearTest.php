@@ -19,10 +19,14 @@ class LeapYearTest extends TestCase
         yield "twelve" => [12];
     }
 
-    /** @test */
-    public function should_year_one_not_be_leap_year(): void
+    /**
+     * @return iterator<int>
+     */
+    public function privideNotLeapYear(): iterator
     {
-        self::assertEquals(false, Year::isLeapYear(1));
+        yield "one" => [1];
+        yield "two" => [2];
+        yield "three" => [3];
     }
 
     /**
@@ -32,5 +36,14 @@ class LeapYearTest extends TestCase
     public function should_year_be_leap_year(int $year): void
     {
         self::assertTrue(Year::isLeapYear($year));
+    }
+
+    /**
+     * @test
+     * @dataProvider privideNotLeapYear
+    */
+    public function should_year_not_be_leap_year(int $year): void
+    {
+        self::assertFalse(Year::isLeapYear($year));
     }
 }
